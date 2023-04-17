@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Video Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Default styles */
+      .text-size {
+        font-size: 16px;
+      }
+
+      /* Styles for smaller screens */
+      @media (max-width: 640px) {
+        .text-size {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-900 text-size">
+    <div class="container mx-auto p-4">
+      <h1 class="text-4xl font-bold mb-4 text-stone-200">All Videos And Audio</h1>
+      <br>
+      <ul class="list-disc list-inside text-stone-200">
+        {% for video in videos %}
+          <li><a href="video/{{ video }}" class="text-blue-500 hover:underline">{{ video }}</a></li>
+        {% endfor %}
+      </ul>
+      <br>
+      <p class="text-lg mb-2 text-stone-200">Want To Upload A Video Or Audio? Go On</p>
+      <a href="/upload" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload a Video/Audio</a>
+    </div>
+  </body>
+</html>
